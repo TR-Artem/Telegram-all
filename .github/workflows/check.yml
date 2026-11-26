@@ -27,8 +27,8 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       - name: Сохранить результаты в репозиторий
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "TR-Artem"
+          git config user.email "129892323+TR-Artem@users.noreply.github.com"
           git add public/data/results.json
           git commit -m "Результаты ночной проверки"
           git push
