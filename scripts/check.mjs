@@ -11,7 +11,9 @@ const DAILY_LIMIT = 30
 // Проверка повторов: алерт уходит только со второй ошибки подряд.
 const FAILURES_TO_ALERT = 2
 const FETCH_TIMEOUT = 15000
+const SLOW_MS = 3000
 const DAY = 24 * 60 * 60 * 1000
+const MSK_OFFSET = 3 * 60 * 60 * 1000
 
 const mskDay = new Intl.DateTimeFormat('en-CA', {
   timeZone: 'Europe/Moscow',
@@ -161,16 +163,86 @@ function sslText(days) {
   return `Осталось ${days} дн.`
 }
 
+function formatPercent(value) {
+  return `${(value * 100).toFixed(1).replace('.', ',')}%`
+}
+
+function buildDigest(sites, daily, checks, now) {
+  const keys = []
+  for (let i = 7; i >= 1; i -= 1) {
+    keys.push(dayKey(new Date(now.getTime() - i * DAY)))
+  }
+
+  const rows = []
+  for (const site of sites) {
+    let total = 0
+    let ok = 0
+    let msSum = 0
+    for (const key of keys) {
+      const row = daily[key]?.[site.id]
+      if (row === undefined) continue
+      total += row.checks
+      ok += row.ok
+      msSum += row.msSum
+    }
+    if (total === 0) continue
+
+    const current = checks.find((c) => c.id === site.id)
+    const ssl = typeof current?.sslDays === 'number' ? current.sslDays : null
+    rows.push({
+      site,
+      total,
+      ok,
+      uptime: ok / total,
+      avgMs: ok > 0 ? msSum / ok : null,
+      ssl,
+    })
+  }
+
+  if (rows.length === 0) return null
+
+  rows.sort((a, b) => a.uptime - b.uptime || a.site.name.localeCompare(b.site.name, 'ru'))
+  const checksTotal = rows.reduce((sum, row) => sum + row.total, 0)
+
+  const lines = rows.map((row) => {
+    const icon = row.uptime === 1 ? '🟢' : row.uptime >= 0.99 ? '🟡' : '🔴'
+    const avg = row.avgMs === null ? '—' : `${Math.round(row.avgMs)} мс`
+    return `${icon} ${row.site.name} — ${formatPercent(row.uptime)}, ${avg}`
+  })
+
+  const failed = rows.filter((row) => row.uptime < 1).map((row) => row.site.name)
+  const sslSoon = rows
+    .filter((row) => typeof row.ssl === 'number' && row.ssl <= 14)
+    .map((row) => `${row.site.name} — ${row.ssl} дн.`)
+
+  const parts = [
+    '📊 Итоги недели',
+    '',
+    `Проверок: ${checksTotal} · сайтов: ${rows.length}`,
+    '',
+    ...lines,
+    '',
+    failed.length > 0 ? `Простои были: ${failed.join(', ')}.` : 'Простоев не было.',
+  ]
+  if (sslSoon.length > 0) {
+    parts.push(`SSL истекает: ${sslSoon.join('; ')}.`)
+  }
+
+  return parts.join('\n')
+}
+
 const sites = JSON.parse(await readFile(SITES, 'utf8'))
 
 let history = []
 let daily = null
 let state = {}
+let digest = { lastSent: null }
 try {
   const saved = JSON.parse(await readFile(RESULTS, 'utf8'))
   history = Array.isArray(saved.history) ? saved.history : []
   daily = saved.daily && typeof saved.daily === 'object' ? saved.daily : null
   state = saved.state && typeof saved.state === 'object' ? saved.state : {}
+  digest = saved.digest && typeof saved.digest === 'object' ? saved.digest : { lastSent: null }
 } catch {
   // Первый запуск: файла с результатами ещё нет.
 }
@@ -204,22 +276,34 @@ for (const check of checks) {
   s.streak = Number(s.streak) || 0
   s.downSince = s.downSince ?? null
   s.sslWarn = s.sslWarn ?? null
+  s.slow = s.slow === true
 
   if (!check.ok) {
     s.streak += 1
     if (s.downSince === null) {
       s.downSince = time
     }
+    s.slow = false
     if (s.streak === FAILURES_TO_ALERT) {
       changes.push(`🔴 Не открывается: ${site.name} · ${check.status || check.error}\n${site.url}`)
     }
   } else {
-    if (s.streak >= FAILURES_TO_ALERT && s.downSince !== null) {
+    const recovered = s.streak >= FAILURES_TO_ALERT && s.downSince !== null
+    if (recovered) {
       const duration = formatDuration(now.getTime() - Date.parse(s.downSince))
       changes.push(`🟢 Снова работает: ${site.name}\nЛежал ${duration}\n${site.url}`)
     }
     s.streak = 0
     s.downSince = null
+
+    if (check.ms > SLOW_MS) {
+      if (!recovered && !s.slow) {
+        changes.push(`🟡 Медленно отвечает: ${site.name} · ${check.ms} мс\n${site.url}`)
+      }
+      s.slow = true
+    } else {
+      s.slow = false
+    }
   }
 
   if (typeof check.sslDays === 'number') {
@@ -244,4 +328,18 @@ if (changes.length === 0) {
   await notify(`Проверка сайтов\n\n${changes.join('\n\n')}`)
 }
 
-await writeFile(RESULTS, JSON.stringify({ history, daily, state }, null, 2) + '\n')
+const today = dayKey(now)
+const mskNow = new Date(now.getTime() + MSK_OFFSET)
+const digestDue =
+  process.env.DIGEST_FORCE === '1' ||
+  (mskNow.getUTCDay() === 1 && mskNow.getUTCHours() >= 9)
+
+if (digestDue && digest.lastSent !== today) {
+  const text = buildDigest(sites, daily, checks, now)
+  if (text !== null) {
+    await notify(text)
+    digest.lastSent = today
+  }
+}
+
+await writeFile(RESULTS, JSON.stringify({ history, daily, state, digest }, null, 2) + '\n')

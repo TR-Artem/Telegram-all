@@ -79,6 +79,10 @@ body {
   border-left-color: #d23b3b;
 }
 
+.site--slow {
+  border-left-color: #d99a1e;
+}
+
 .site h2 {
   margin: 0 0 6px;
   font-size: 18px;
@@ -112,6 +116,10 @@ body {
 
 .site--bad .site__status {
   color: #d23b3b;
+}
+
+.site--slow .site__status {
+  color: #b7791f;
 }
 
 .back {

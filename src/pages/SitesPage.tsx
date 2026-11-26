@@ -1,7 +1,7 @@
 import { Link } from 'react-router'
 import { useMonitoring } from '../monitoring'
 import { formatMs, formatUptime, siteStats, sslText } from '../stats'
-import { statusText } from '../status'
+import { SLOW_MS, statusText } from '../status'
 
 function SitesPage() {
   const { sites, history, daily, loading, error } = useMonitoring()
@@ -32,8 +32,11 @@ function SitesPage() {
         {sites.map((site) => {
           const check = last?.checks.find((c) => c.id === site.id)
           const stats = siteStats(site.id, daily)
+          const slow = check?.ok === true && check.ms > SLOW_MS
+          const className =
+            check?.ok === false ? 'site site--bad' : slow ? 'site site--slow' : 'site'
           return (
-            <li key={site.id} className={check?.ok === false ? 'site site--bad' : 'site'}>
+            <li key={site.id} className={className}>
               <span className="site__status">{statusText(check)}</span>
               <h2>
                 <Link to={`/site/${site.id}`}>{site.name}</Link>
