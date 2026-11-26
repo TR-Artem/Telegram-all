@@ -43,6 +43,9 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: dist
+      # Артефакт иногда не успевает появиться в API GitHub к моменту публикации.
+      - name: Дать GitHub увидеть артефакт
+        run: sleep 10
       - name: Опубликовать
         id: deployment
         uses: actions/deploy-pages@v5
