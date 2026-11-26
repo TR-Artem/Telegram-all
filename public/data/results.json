@@ -564,5 +564,464 @@
         }
       ]
     }
-  ]
+  ],
+  "daily": {
+    "2026-11-15": {
+      "monitoring": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 487,
+        "sslDays": null
+      },
+      "digest": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 127,
+        "sslDays": null
+      },
+      "tour": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 647,
+        "sslDays": null
+      },
+      "blog": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 897,
+        "sslDays": null
+      },
+      "jobs": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 617,
+        "sslDays": null
+      },
+      "old-landing": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 217,
+        "sslDays": null
+      }
+    },
+    "2026-11-16": {
+      "monitoring": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 560,
+        "sslDays": null
+      },
+      "digest": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 200,
+        "sslDays": null
+      },
+      "tour": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 720,
+        "sslDays": null
+      },
+      "blog": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 970,
+        "sslDays": null
+      },
+      "jobs": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 690,
+        "sslDays": null
+      },
+      "old-landing": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 290,
+        "sslDays": null
+      }
+    },
+    "2026-11-17": {
+      "monitoring": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 543,
+        "sslDays": null
+      },
+      "digest": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 183,
+        "sslDays": null
+      },
+      "tour": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 703,
+        "sslDays": null
+      },
+      "blog": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 953,
+        "sslDays": null
+      },
+      "jobs": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 673,
+        "sslDays": null
+      },
+      "old-landing": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 273,
+        "sslDays": null
+      }
+    },
+    "2026-11-18": {
+      "monitoring": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 526,
+        "sslDays": null
+      },
+      "digest": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 166,
+        "sslDays": null
+      },
+      "tour": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 686,
+        "sslDays": null
+      },
+      "blog": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 936,
+        "sslDays": null
+      },
+      "jobs": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 656,
+        "sslDays": null
+      },
+      "old-landing": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 256,
+        "sslDays": null
+      }
+    },
+    "2026-11-19": {
+      "monitoring": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 509,
+        "sslDays": null
+      },
+      "digest": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 149,
+        "sslDays": null
+      },
+      "tour": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 669,
+        "sslDays": null
+      },
+      "blog": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 919,
+        "sslDays": null
+      },
+      "jobs": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 639,
+        "sslDays": null
+      },
+      "old-landing": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 239,
+        "sslDays": null
+      }
+    },
+    "2026-11-20": {
+      "monitoring": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 492,
+        "sslDays": null
+      },
+      "digest": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 132,
+        "sslDays": null
+      },
+      "tour": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 652,
+        "sslDays": null
+      },
+      "blog": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 902,
+        "sslDays": null
+      },
+      "jobs": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 622,
+        "sslDays": null
+      },
+      "old-landing": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 222,
+        "sslDays": null
+      }
+    },
+    "2026-11-21": {
+      "monitoring": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 565,
+        "sslDays": null
+      },
+      "digest": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 205,
+        "sslDays": null
+      },
+      "tour": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 725,
+        "sslDays": null
+      },
+      "blog": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 975,
+        "sslDays": null
+      },
+      "jobs": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 695,
+        "sslDays": null
+      },
+      "old-landing": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 295,
+        "sslDays": null
+      }
+    },
+    "2026-11-22": {
+      "monitoring": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 548,
+        "sslDays": null
+      },
+      "digest": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 188,
+        "sslDays": null
+      },
+      "tour": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 708,
+        "sslDays": null
+      },
+      "blog": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 958,
+        "sslDays": null
+      },
+      "jobs": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 678,
+        "sslDays": null
+      },
+      "old-landing": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 278,
+        "sslDays": null
+      }
+    },
+    "2026-11-23": {
+      "monitoring": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 531,
+        "sslDays": null
+      },
+      "digest": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 171,
+        "sslDays": null
+      },
+      "tour": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 691,
+        "sslDays": null
+      },
+      "blog": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 941,
+        "sslDays": null
+      },
+      "jobs": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 661,
+        "sslDays": null
+      },
+      "old-landing": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 261,
+        "sslDays": null
+      }
+    },
+    "2026-11-24": {
+      "monitoring": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 514,
+        "sslDays": null
+      },
+      "digest": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 154,
+        "sslDays": null
+      },
+      "tour": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 674,
+        "sslDays": null
+      },
+      "blog": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 924,
+        "sslDays": null
+      },
+      "jobs": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 644,
+        "sslDays": null
+      },
+      "old-landing": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 244,
+        "sslDays": null
+      }
+    },
+    "2026-11-25": {
+      "monitoring": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 497,
+        "sslDays": null
+      },
+      "digest": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 137,
+        "sslDays": null
+      },
+      "tour": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 657,
+        "sslDays": null
+      },
+      "blog": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 907,
+        "sslDays": null
+      },
+      "jobs": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 627,
+        "sslDays": null
+      },
+      "old-landing": {
+        "checks": 1,
+        "ok": 0,
+        "msSum": 0,
+        "sslDays": null
+      }
+    },
+    "2026-11-26": {
+      "monitoring": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 480,
+        "sslDays": null
+      },
+      "digest": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 120,
+        "sslDays": null
+      },
+      "tour": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 640,
+        "sslDays": null
+      },
+      "blog": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 890,
+        "sslDays": null
+      },
+      "jobs": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 610,
+        "sslDays": null
+      },
+      "old-landing": {
+        "checks": 1,
+        "ok": 0,
+        "msSum": 0,
+        "sslDays": null
+      }
+    }
+  },
+  "state": {}
 }

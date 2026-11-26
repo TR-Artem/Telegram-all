@@ -1,14 +1,18 @@
-name: Ночная проверка сайтов
+name: Проверка сайтов каждые 30 минут
 
 on:
   schedule:
-    - cron: '0 21 * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
   pages: write
   id-token: write
+
+concurrency:
+  group: check
+  cancel-in-progress: false
 
 jobs:
   check:
@@ -30,7 +34,11 @@ jobs:
           git config user.name "TR-Artem"
           git config user.email "129892323+TR-Artem@users.noreply.github.com"
           git add public/data/results.json
-          git commit -m "Результаты ночной проверки"
+          if git diff --cached --quiet; then
+            echo "Результаты не изменились"
+            exit 0
+          fi
+          git commit -m "Результаты проверки"
           git push
 
   publish:

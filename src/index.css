@@ -103,6 +103,13 @@ body {
   font-weight: 600;
 }
 
+.site__meta {
+  display: block;
+  margin-top: 8px;
+  color: #5b6478;
+  font-size: 13px;
+}
+
 .site--bad .site__status {
   color: #d23b3b;
 }

@@ -1,9 +1,10 @@
 import { createContext, useContext } from 'react'
-import type { Run, Site } from './types'
+import type { Daily, Run, Site } from './types'
 
 export type Monitoring = {
   sites: Site[]
   history: Run[]
+  daily: Daily
   loading: boolean
   error: string
 }

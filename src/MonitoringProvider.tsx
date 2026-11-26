@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { MonitoringContext } from './monitoring'
-import type { Run, Site } from './types'
+import type { Daily, Results, Site } from './types'
 
 async function loadJson(name: string, fresh = false) {
   const query = fresh ? `?t=${Date.now()}` : ''
@@ -13,7 +13,8 @@ async function loadJson(name: string, fresh = false) {
 
 function MonitoringProvider({ children }: { children: ReactNode }) {
   const [sites, setSites] = useState<Site[]>([])
-  const [history, setHistory] = useState<Run[]>([])
+  const [history, setHistory] = useState<Results['history']>([])
+  const [daily, setDaily] = useState<Daily>({})
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
 
@@ -22,10 +23,11 @@ function MonitoringProvider({ children }: { children: ReactNode }) {
     async function load() {
       try {
         const list: Site[] = await loadJson('sites.json')
-        const results: { history: Run[] } = await loadJson('results.json', true)
+        const results: Results = await loadJson('results.json', true)
         if (!ignore) {
           setSites(list)
           setHistory(results.history)
+          setDaily(results.daily ?? {})
         }
       } catch (e) {
         if (!ignore) {
@@ -43,7 +45,7 @@ function MonitoringProvider({ children }: { children: ReactNode }) {
   }, [])
 
   return (
-    <MonitoringContext value={{ sites, history, loading, error }}>{children}</MonitoringContext>
+    <MonitoringContext value={{ sites, history, daily, loading, error }}>{children}</MonitoringContext>
   )
 }
 

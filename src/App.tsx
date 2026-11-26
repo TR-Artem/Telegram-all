@@ -19,8 +19,8 @@ function App() {
             : `Последняя проверка: ${new Date(last.time).toLocaleString('ru')}`}
         </p>
         <p className="header__note">
-          Каждую ночь проверяем сайты из списка. Если сайт перестал открываться — сообщение в
-          Telegram.
+          Каждые 30 минут проверяем сайты из списка. Если сайт не открылся две проверки подряд —
+          сообщение в Telegram.
         </p>
         <nav className="nav">
           <NavLink to="/">Сайты</NavLink>
