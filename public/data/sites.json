@@ -1,0 +1,42 @@
+[
+  {
+    "id": "monitoring",
+    "name": "Мониторинг сайтов группы",
+    "url": "https://tr-artem.github.io/Makarov_Veb/"
+  },
+  {
+    "id": "digest",
+    "name": "Дайджест новостей",
+    "url": "https://tr-artem.github.io/digest/"
+  },
+  {
+    "id": "dotnet-test",
+    "name": "Тест Backend ASP.NET Core",
+    "url": "https://tr-artem.github.io/hiring-test/"
+  },
+  {
+    "id": "node-test",
+    "name": "Тест Backend Node.js",
+    "url": "https://tr-artem.github.io/node-test/"
+  },
+  {
+    "id": "sonesta",
+    "name": "SonestaTour",
+    "url": "https://tr-artem.github.io/SonestaTour/"
+  },
+  {
+    "id": "git",
+    "name": "Справочник по Git и GitHub",
+    "url": "https://maximbytecamp.github.io/git_github_makarov/"
+  },
+  {
+    "id": "mongodb",
+    "name": "Справочник по MongoDB",
+    "url": "https://maximbytecamp.github.io/mongodb_theory_makarov/"
+  },
+  {
+    "id": "staryy",
+    "name": "Старый проект",
+    "url": "https://maximbytecamp.github.io/staryy-proekt/"
+  }
+]
