@@ -10,16 +10,23 @@ function SitesPage() {
     return <main className="main"><p className="empty">Загрузка сайтов…</p></main>
   }
 
-  const failing = sites.filter((site) => last?.checks.find((c) => c.id === site.id)?.ok === false).length
+  const checks = sites.map((site) => last?.checks.find((c) => c.id === site.id))
+  const checked = checks.filter((check) => check !== undefined).length
+  const failing = checks.filter((check) => check?.ok === false).length
+
+  // Сводка не должна обещать больше, чем реально проверено: часть сайтов
+  // в демо-списке ещё не опрашивалась.
+  const summary =
+    failing > 0
+      ? `Не открываются: ${failing} из ${sites.length}`
+      : checked < sites.length
+        ? `Проверено ${checked} из ${sites.length} — все отвечают`
+        : `Все ${sites.length} сайтов открываются`
 
   return (
     <main className="main">
       {error !== '' && <p className="load-error">{error}</p>}
-      {last !== undefined && (
-        <p className="summary">
-          {failing === 0 ? `Все ${sites.length} сайтов открываются` : `Не открываются: ${failing} из ${sites.length}`}
-        </p>
-      )}
+      {last !== undefined && <p className="summary">{summary}</p>}
       <ul className="sites">
         {sites.map((site) => {
           const check = last?.checks.find((c) => c.id === site.id)

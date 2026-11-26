@@ -12,11 +12,15 @@ function App() {
   return (
     <>
       <header className="header">
-        <h1>Мониторинг сайтов группы</h1>
+        <h1>Мониторинг сайтов</h1>
         <p>
           {last === undefined
             ? 'Проверок ещё не было'
             : `Последняя проверка: ${new Date(last.time).toLocaleString('ru')}`}
+        </p>
+        <p className="header__note">
+          Каждую ночь проверяем сайты из списка. Если сайт перестал открываться — сообщение в
+          Telegram.
         </p>
         <nav className="nav">
           <NavLink to="/">Сайты</NavLink>

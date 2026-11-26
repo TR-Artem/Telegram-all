@@ -25,6 +25,11 @@ body {
   color: #c4cad8;
 }
 
+.header__note {
+  font-size: 14px;
+  max-width: 640px;
+}
+
 .nav {
   display: flex;
   gap: 8px;
