@@ -1,6 +1,59 @@
 {
   "history": [
     {
+      "time": "2026-11-26T17:01:33.990Z",
+      "checks": [
+        {
+          "id": "monitoring",
+          "ok": true,
+          "status": 200,
+          "ms": 113,
+          "error": "",
+          "sslDays": 34
+        },
+        {
+          "id": "digest",
+          "ok": true,
+          "status": 200,
+          "ms": 191,
+          "error": "",
+          "sslDays": 34
+        },
+        {
+          "id": "tour",
+          "ok": true,
+          "status": 200,
+          "ms": 155,
+          "error": "",
+          "sslDays": 34
+        },
+        {
+          "id": "blog",
+          "ok": true,
+          "status": 200,
+          "ms": 1025,
+          "error": "",
+          "sslDays": 44
+        },
+        {
+          "id": "jobs",
+          "ok": true,
+          "status": 200,
+          "ms": 1263,
+          "error": "",
+          "sslDays": 129
+        },
+        {
+          "id": "old-landing",
+          "ok": false,
+          "status": 404,
+          "ms": 73,
+          "error": "",
+          "sslDays": 34
+        }
+      ]
+    },
+    {
       "time": "2026-11-25T21:00:00Z",
       "checks": [
         {
@@ -986,42 +1039,73 @@
     },
     "2026-11-26": {
       "monitoring": {
-        "checks": 1,
-        "ok": 1,
-        "msSum": 480,
-        "sslDays": null
+        "checks": 2,
+        "ok": 2,
+        "msSum": 593,
+        "sslDays": 34
       },
       "digest": {
-        "checks": 1,
-        "ok": 1,
-        "msSum": 120,
-        "sslDays": null
+        "checks": 2,
+        "ok": 2,
+        "msSum": 311,
+        "sslDays": 34
       },
       "tour": {
-        "checks": 1,
-        "ok": 1,
-        "msSum": 640,
-        "sslDays": null
+        "checks": 2,
+        "ok": 2,
+        "msSum": 795,
+        "sslDays": 34
       },
       "blog": {
-        "checks": 1,
-        "ok": 1,
-        "msSum": 890,
-        "sslDays": null
+        "checks": 2,
+        "ok": 2,
+        "msSum": 1915,
+        "sslDays": 44
       },
       "jobs": {
-        "checks": 1,
-        "ok": 1,
-        "msSum": 610,
-        "sslDays": null
+        "checks": 2,
+        "ok": 2,
+        "msSum": 1873,
+        "sslDays": 129
       },
       "old-landing": {
-        "checks": 1,
+        "checks": 2,
         "ok": 0,
         "msSum": 0,
-        "sslDays": null
+        "sslDays": 34
       }
     }
   },
-  "state": {}
+  "state": {
+    "monitoring": {
+      "streak": 0,
+      "downSince": null,
+      "sslWarn": null
+    },
+    "digest": {
+      "streak": 0,
+      "downSince": null,
+      "sslWarn": null
+    },
+    "tour": {
+      "streak": 0,
+      "downSince": null,
+      "sslWarn": null
+    },
+    "blog": {
+      "streak": 0,
+      "downSince": null,
+      "sslWarn": null
+    },
+    "jobs": {
+      "streak": 0,
+      "downSince": null,
+      "sslWarn": null
+    },
+    "old-landing": {
+      "streak": 1,
+      "downSince": "2026-11-26T17:01:33.990Z",
+      "sslWarn": null
+    }
+  }
 }
