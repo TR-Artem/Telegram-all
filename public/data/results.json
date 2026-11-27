@@ -1,6 +1,59 @@
 {
   "history": [
     {
+      "time": "2026-11-27T19:22:36.747Z",
+      "checks": [
+        {
+          "id": "monitoring",
+          "ok": true,
+          "status": 200,
+          "ms": 258,
+          "error": "",
+          "sslDays": 33
+        },
+        {
+          "id": "digest",
+          "ok": true,
+          "status": 200,
+          "ms": 234,
+          "error": "",
+          "sslDays": 33
+        },
+        {
+          "id": "tour",
+          "ok": true,
+          "status": 200,
+          "ms": 233,
+          "error": "",
+          "sslDays": 33
+        },
+        {
+          "id": "blog",
+          "ok": true,
+          "status": 200,
+          "ms": 1754,
+          "error": "",
+          "sslDays": 43
+        },
+        {
+          "id": "jobs",
+          "ok": true,
+          "status": 200,
+          "ms": 1058,
+          "error": "",
+          "sslDays": 128
+        },
+        {
+          "id": "old-landing",
+          "ok": false,
+          "status": 404,
+          "ms": 121,
+          "error": "",
+          "sslDays": 33
+        }
+      ]
+    },
+    {
       "time": "2026-11-27T09:36:41.159Z",
       "checks": [
         {
@@ -1342,37 +1395,37 @@
     },
     "2026-11-27": {
       "monitoring": {
-        "checks": 2,
-        "ok": 2,
-        "msSum": 572,
+        "checks": 3,
+        "ok": 3,
+        "msSum": 830,
         "sslDays": 33
       },
       "digest": {
-        "checks": 2,
-        "ok": 2,
-        "msSum": 585,
+        "checks": 3,
+        "ok": 3,
+        "msSum": 819,
         "sslDays": 33
       },
       "tour": {
-        "checks": 2,
-        "ok": 2,
-        "msSum": 544,
+        "checks": 3,
+        "ok": 3,
+        "msSum": 777,
         "sslDays": 33
       },
       "blog": {
-        "checks": 2,
-        "ok": 2,
-        "msSum": 2151,
+        "checks": 3,
+        "ok": 3,
+        "msSum": 3905,
         "sslDays": 43
       },
       "jobs": {
-        "checks": 2,
-        "ok": 2,
-        "msSum": 2089,
-        "sslDays": 129
+        "checks": 3,
+        "ok": 3,
+        "msSum": 3147,
+        "sslDays": 128
       },
       "old-landing": {
-        "checks": 2,
+        "checks": 3,
         "ok": 0,
         "msSum": 0,
         "sslDays": 33
@@ -1411,7 +1464,7 @@
       "slow": false
     },
     "old-landing": {
-      "streak": 6,
+      "streak": 7,
       "downSince": "2026-11-26T17:01:33.990Z",
       "sslWarn": null,
       "slow": false
