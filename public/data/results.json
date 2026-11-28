@@ -1,6 +1,59 @@
 {
   "history": [
     {
+      "time": "2026-11-28T02:06:03.106Z",
+      "checks": [
+        {
+          "id": "monitoring",
+          "ok": true,
+          "status": 200,
+          "ms": 315,
+          "error": "",
+          "sslDays": 32
+        },
+        {
+          "id": "digest",
+          "ok": true,
+          "status": 200,
+          "ms": 312,
+          "error": "",
+          "sslDays": 32
+        },
+        {
+          "id": "tour",
+          "ok": true,
+          "status": 200,
+          "ms": 342,
+          "error": "",
+          "sslDays": 32
+        },
+        {
+          "id": "blog",
+          "ok": true,
+          "status": 200,
+          "ms": 1037,
+          "error": "",
+          "sslDays": 42
+        },
+        {
+          "id": "jobs",
+          "ok": true,
+          "status": 200,
+          "ms": 1126,
+          "error": "",
+          "sslDays": 128
+        },
+        {
+          "id": "old-landing",
+          "ok": false,
+          "status": 404,
+          "ms": 140,
+          "error": "",
+          "sslDays": 32
+        }
+      ]
+    },
+    {
       "time": "2026-11-27T19:22:36.747Z",
       "checks": [
         {
@@ -1430,6 +1483,44 @@
         "msSum": 0,
         "sslDays": 33
       }
+    },
+    "2026-11-28": {
+      "monitoring": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 315,
+        "sslDays": 32
+      },
+      "digest": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 312,
+        "sslDays": 32
+      },
+      "tour": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 342,
+        "sslDays": 32
+      },
+      "blog": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 1037,
+        "sslDays": 42
+      },
+      "jobs": {
+        "checks": 1,
+        "ok": 1,
+        "msSum": 1126,
+        "sslDays": 128
+      },
+      "old-landing": {
+        "checks": 1,
+        "ok": 0,
+        "msSum": 0,
+        "sslDays": 32
+      }
     }
   },
   "state": {
@@ -1464,7 +1555,7 @@
       "slow": false
     },
     "old-landing": {
-      "streak": 7,
+      "streak": 8,
       "downSince": "2026-11-26T17:01:33.990Z",
       "sslWarn": null,
       "slow": false
